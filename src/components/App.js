@@ -86,23 +86,23 @@ const App = () => {
     appApi.setUserInfo({name, about})
     .then((userData) => {
       console.log(userData);
-      setCurrentUser(userData);});
-    closeAllPopups();
+      setCurrentUser(userData);})
+    .then(closeAllPopups());
   }
 
   const handleUpdateAvatar = ({avatar}) => {
     appApi.setUserAvatar({avatar})
     .then((userData) => {
-      setCurrentUser(userData);});
-    closeAllPopups();
+      setCurrentUser(userData);})
+    .then(closeAllPopups());
   }
 
   const handleAddPlaceSubmit = ({name, link}) => {
     appApi.addCard({name, link})
     .then((newCard) => {
       setCards([...cards, newCard]);
-    });
-    closeAllPopups();
+    })
+    .then(closeAllPopups());
   }
 
   return (
