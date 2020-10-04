@@ -87,14 +87,14 @@ const App = () => {
     .then((userData) => {
       console.log(userData);
       setCurrentUser(userData);})
-    .then(closeAllPopups());
+      .then(() => {closeAllPopups()});
   }
 
   const handleUpdateAvatar = ({avatar}) => {
     appApi.setUserAvatar({avatar})
     .then((userData) => {
       setCurrentUser(userData);})
-    .then(closeAllPopups());
+      .then(() => {closeAllPopups()});
   }
 
   const handleAddPlaceSubmit = ({name, link}) => {
@@ -102,7 +102,7 @@ const App = () => {
     .then((newCard) => {
       setCards([...cards, newCard]);
     })
-    .then(closeAllPopups());
+    .then(() => {closeAllPopups()});
   }
 
   return (
